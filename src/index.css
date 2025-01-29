@@ -13,9 +13,9 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary-green: 142 84% 58%;
-    --primary-blue: 217 91% 67%;
-    --primary: var(--primary-blue);
+    --primary-sage: 150 30% 70%;
+    --primary-soft-yellow: 48 95% 90%;
+    --primary: var(--primary-sage);
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -48,5 +48,5 @@
 }
 
 .hero-gradient {
-  background: linear-gradient(to right, #0EA5E9 0%, #22C55E 100%);
+  background: linear-gradient(to right, #C1D9BF 0%, #F2FCE2 100%);
 }
