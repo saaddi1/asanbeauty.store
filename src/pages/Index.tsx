@@ -37,17 +37,16 @@ const Index = () => {
                 Experience our collection of premium skincare and beauty products
                 made with natural ingredients.
               </p>
-              <Button size="lg" className="bg-white text-pink-500 hover:bg-gray-100">
+              <Button size="lg" className="bg-white text-blue-500 hover:bg-gray-100">
                 Shop Now
               </Button>
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-blue-400">
+            <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-500">
               Your Questions & Answers
             </h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">

@@ -3,7 +3,7 @@ import { Input } from "./ui/input";
 
 export const Newsletter = () => {
   return (
-    <div className="bg-pink-50 py-8">
+    <div className="bg-blue-50 py-8">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h3 className="text-lg font-semibold text-gray-900">
@@ -18,7 +18,7 @@ export const Newsletter = () => {
               placeholder="Enter your email"
               className="flex-1"
             />
-            <Button>Subscribe</Button>
+            <Button className="bg-blue-500 hover:bg-blue-600">Subscribe</Button>
           </div>
         </div>
       </div>

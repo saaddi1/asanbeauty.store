@@ -11,14 +11,14 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
-            <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-blue-400">
+            <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-500">
               Asan Beauty
             </h1>
             <nav className="hidden md:flex space-x-6">
-              <a href="#" className="text-gray-600 hover:text-pink-400">Skincare</a>
-              <a href="#" className="text-gray-600 hover:text-pink-400">Makeup</a>
-              <a href="#" className="text-gray-600 hover:text-pink-400">Hair</a>
-              <a href="#" className="text-gray-600 hover:text-pink-400">Body</a>
+              <a href="#" className="text-gray-600 hover:text-blue-500">Skincare</a>
+              <a href="#" className="text-gray-600 hover:text-blue-500">Makeup</a>
+              <a href="#" className="text-gray-600 hover:text-blue-500">Hair</a>
+              <a href="#" className="text-gray-600 hover:text-blue-500">Body</a>
             </nav>
           </div>
 
@@ -48,10 +48,10 @@ export const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
             <nav className="flex flex-col space-y-4">
-              <a href="#" className="text-gray-600 hover:text-pink-400">Skincare</a>
-              <a href="#" className="text-gray-600 hover:text-pink-400">Makeup</a>
-              <a href="#" className="text-gray-600 hover:text-pink-400">Hair</a>
-              <a href="#" className="text-gray-600 hover:text-pink-400">Body</a>
+              <a href="#" className="text-gray-600 hover:text-blue-500">Skincare</a>
+              <a href="#" className="text-gray-600 hover:text-blue-500">Makeup</a>
+              <a href="#" className="text-gray-600 hover:text-blue-500">Hair</a>
+              <a href="#" className="text-gray-600 hover:text-blue-500">Body</a>
             </nav>
             <div className="mt-4">
               <Input
