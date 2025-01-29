@@ -18,7 +18,7 @@ export const Newsletter = () => {
               placeholder="Enter your email"
               className="flex-1"
             />
-            <Button className="bg-[#C1D9BF] hover:bg-[#A3C2A0]">Subscribe</Button>
+            <Button className="bg-[#C1D9BF] hover:bg-[#A3C2A0] text-gray-800">Subscribe</Button>
           </div>
         </div>
       </div>
