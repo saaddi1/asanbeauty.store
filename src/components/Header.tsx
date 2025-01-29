@@ -12,7 +12,7 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
             <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-blue-400">
-              BNB Beauty
+              Asan Beauty
             </h1>
             <nav className="hidden md:flex space-x-6">
               <a href="#" className="text-gray-600 hover:text-pink-400">Skincare</a>
