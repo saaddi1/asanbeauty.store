@@ -11,9 +11,13 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
-            <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#C1D9BF] to-[#F2FCE2]">
-              Asan Beauty
-            </h1>
+            <a href="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/c38f3a25-ed73-49f6-a829-3f21eceb529f.png" 
+                alt="Asan Mart Logo" 
+                className="h-12 w-auto"
+              />
+            </a>
             <nav className="hidden md:flex space-x-6">
               <a href="#" className="text-gray-600 hover:text-[#C1D9BF]">Skincare</a>
               <a href="#" className="text-gray-600 hover:text-[#C1D9BF]">Makeup</a>
