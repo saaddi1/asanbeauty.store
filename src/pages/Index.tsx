@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
+import { RotatingHeader } from "@/components/RotatingHeader";
 
 const Index = () => {
   const faqs = [
@@ -26,24 +26,9 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       
+      <RotatingHeader />
+      
       <main className="flex-1">
-        <section className="hero-gradient">
-          <div className="container mx-auto px-4 py-16 md:py-24">
-            <div className="max-w-2xl">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                Discover Your Natural Beauty
-              </h1>
-              <p className="text-lg text-gray-700 mb-8">
-                Experience our collection of premium skincare and beauty products
-                made with natural ingredients.
-              </p>
-              <Button size="lg" className="bg-[#C1D9BF] text-gray-800 hover:bg-[#A3C2A0]">
-                Shop Now
-              </Button>
-            </div>
-          </div>
-        </section>
-
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-[#C1D9BF] to-[#F2FCE2]">
