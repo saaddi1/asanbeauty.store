@@ -1,10 +1,10 @@
-import { Lipstick, Sparkles, Scissors, Spray, Brush, Leaf } from "lucide-react";
+import { Heart, Sparkles, Scissors, Droplet, Brush, Leaf } from "lucide-react";
 import { Card } from "./ui/card";
 
 const categories = [
   {
     name: "Makeup",
-    icon: Lipstick,
+    icon: Heart,
     description: "Lipsticks, Eyeshadow Palettes, Foundations & More",
     href: "/categories/makeup",
   },
@@ -22,7 +22,7 @@ const categories = [
   },
   {
     name: "Fragrances",
-    icon: Spray,
+    icon: Droplet,
     description: "Perfumes, Body Mists & Travel-Size Scents",
     href: "/categories/fragrances",
   },
