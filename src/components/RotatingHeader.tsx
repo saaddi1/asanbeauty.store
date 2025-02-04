@@ -6,37 +6,50 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay";
 
 const slides = [
   {
-    title: "Explore Our Beauty",
-    subtitle: "Shop Now!",
+    title: "Face Wash Hydra Glow",
+    subtitle: "Daily Facial Cleanser",
     buttonText: "Shop Now",
     buttonLink: "/products",
-    bgImage: "photo-1649972904349-6e44c42644a7",
+    bgImage: "/lovable-uploads/94706319-45e0-4994-a589-36d9613fb0af.png",
   },
   {
-    title: "Limited Time Offer",
-    subtitle: "50% Off on Ramdan Offer",
-    buttonText: "View Offers",
-    buttonLink: "/offers",
-    bgImage: "photo-1581091226825-a6a2a5aee158",
+    title: "Complete Skin Care Kit",
+    subtitle: "Transform Your Skincare Routine",
+    buttonText: "View Kit",
+    buttonLink: "/products/kit",
+    bgImage: "/lovable-uploads/6983b519-66b9-43c3-915f-1510c57ae222.png",
   },
   {
-    title: "Discover Your Next Beauty Product",
-    subtitle: "Browse Categories!",
-    buttonText: "Explore Categories",
-    buttonLink: "/categories",
-    bgImage: "photo-1649972904349-6e44c42644a7",
+    title: "Skin Whitening Serum",
+    subtitle: "Brighten Your Complexion",
+    buttonText: "Explore Now",
+    buttonLink: "/products/serum",
+    bgImage: "/lovable-uploads/08b02e15-3d65-460d-b58b-f41ad22b038f.png",
   },
   {
-    title: "Stock Up for the Season",
-    subtitle: "Shop Now!",
-    buttonText: "Shop Seasonal Picks",
-    buttonLink: "/seasonal",
-    bgImage: "photo-1581091226825-a6a2a5aee158",
+    title: "Clay Mask",
+    subtitle: "For Skin Tightening",
+    buttonText: "Shop Mask",
+    buttonLink: "/products/mask",
+    bgImage: "/lovable-uploads/5533a8b8-fb87-41ce-ae7c-92dc6c466b18.png",
+  },
+  {
+    title: "Beauty Cream",
+    subtitle: "Instant Skin Brightener",
+    buttonText: "Get Glowing",
+    buttonLink: "/products/cream",
+    bgImage: "/lovable-uploads/c33fc75f-2b97-4d2d-b58b-f41ad22b038f.png",
+  },
+  {
+    title: "Face Scrub",
+    subtitle: "Glowing Rice Exfoliator",
+    buttonText: "Shop Scrub",
+    buttonLink: "/products/scrub",
+    bgImage: "/lovable-uploads/1a5e4cca-f0dd-4a09-b052-1b9d793b527d.png",
   },
 ];
 
@@ -59,10 +72,10 @@ export const RotatingHeader = () => {
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
-                  backgroundImage: `url(https://source.unsplash.com/${slide.bgImage})`,
+                  backgroundImage: `url(${slide.bgImage})`,
                 }}
               >
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-black/20" />
               </div>
               <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
                 <h2 className="mb-2 text-4xl font-bold md:text-5xl lg:text-6xl">
