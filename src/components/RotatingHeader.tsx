@@ -28,7 +28,7 @@ const slides = [
     subtitle: "Brighten Your Complexion",
     buttonText: "Explore Now",
     buttonLink: "/products/serum",
-    bgImage: "/lovable-uploads/08b02e15-3d65-460d-b58b-f41ad22b038f.png",
+    bgImage: "/lovable-uploads/08b02e15-3d65-460d-b58b-f41ad22b038f.png", // Updated this path
   },
   {
     title: "Clay Mask",
