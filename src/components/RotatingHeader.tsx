@@ -68,7 +68,7 @@ export const RotatingHeader = () => {
       <CarouselContent>
         {slides.map((slide, index) => (
           <CarouselItem key={index} className="relative">
-            <div className="relative h-[60vh] w-full overflow-hidden">
+            <div className="relative h-[80vh] md:h-[90vh] w-full overflow-hidden">
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
