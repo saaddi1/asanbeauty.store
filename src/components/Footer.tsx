@@ -72,7 +72,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-gray-600">
                 <Mail className="h-5 w-5" />
-                <span>info@onlinebookstore.com</span>
+                <span>asanmart333@gmail.com</span>
               </li>
               <li className="flex items-center gap-2 text-gray-600">
                 <Phone className="h-5 w-5" />
@@ -80,7 +80,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-gray-600">
                 <MapPin className="h-5 w-5" />
-                <span>123 Book Street, City, Country</span>
+                <span>Office no 1, 2nd Floor Alhamad Plaza Ghazni Street Urdu Bazar Lahore</span>
               </li>
             </ul>
             <Button 
