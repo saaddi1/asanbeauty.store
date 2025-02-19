@@ -3,14 +3,14 @@ import { ProductCard } from "./ProductCard";
 
 const trendingProducts = [
   {
+    name: "Natural Clay Mask",
+    price: "1150 PKR",
+    image: "/lovable-uploads/89b0b21b-ea89-4311-88a0-91a84777cbbb.png",
+  },
+  {
     name: "Skin Whitening Serum",
     price: "1100 PKR",
     image: "/lovable-uploads/a2b15f17-646e-4bfc-b124-35e00a6c7857.png",
-  },
-  {
-    name: "Natural Face Mask",
-    price: "$24.99",
-    image: "https://source.unsplash.com/photo-1721322800607-8c38375eef04",
   },
   {
     name: "Hydrating Cream",
