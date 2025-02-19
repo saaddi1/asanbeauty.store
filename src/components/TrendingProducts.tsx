@@ -13,9 +13,9 @@ const trendingProducts = [
     image: "/lovable-uploads/a2b15f17-646e-4bfc-b124-35e00a6c7857.png",
   },
   {
-    name: "Hydrating Cream",
-    price: "$34.99",
-    image: "https://source.unsplash.com/photo-1535268647677-300dbf3d78d1",
+    name: "Beauty Cream",
+    price: "990 PKR",
+    image: "/lovable-uploads/922ba74d-5810-4e1d-b461-2f8fa31802b3.png",
   },
   {
     name: "Vitamin C Serum",
