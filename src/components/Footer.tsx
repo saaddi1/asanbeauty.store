@@ -1,3 +1,4 @@
+
 import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
@@ -75,7 +76,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-gray-600">
                 <Phone className="h-5 w-5" />
-                <span>+123 456 7890</span>
+                <span>+923094144911</span>
               </li>
               <li className="flex items-center gap-2 text-gray-600">
                 <MapPin className="h-5 w-5" />
