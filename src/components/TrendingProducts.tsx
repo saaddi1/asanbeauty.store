@@ -18,9 +18,9 @@ const trendingProducts = [
     image: "/lovable-uploads/922ba74d-5810-4e1d-b461-2f8fa31802b3.png",
   },
   {
-    name: "Vitamin C Serum",
-    price: "$39.99",
-    image: "https://source.unsplash.com/photo-1485833077593-4278bba3f11f",
+    name: "Hydra Glow Face Wash",
+    price: "900 PKR",
+    image: "/lovable-uploads/db0060eb-9d70-42b0-8168-6a18bcd6e847.png",
   },
 ];
 
