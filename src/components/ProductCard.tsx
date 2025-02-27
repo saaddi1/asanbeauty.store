@@ -33,7 +33,7 @@ export const ProductCard = ({ name, price, image }: ProductCardProps) => {
   };
 
   return (
-    <div className="group cursor-pointer">
+    <div className="group cursor-pointer rounded-lg border border-gray-200 p-2 hover:shadow-md transition-all">
       <div className="aspect-square overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
         {imageError ? (
           <div className="h-full w-full flex items-center justify-center bg-gray-200">
@@ -49,9 +49,12 @@ export const ProductCard = ({ name, price, image }: ProductCardProps) => {
           />
         )}
       </div>
-      <div className="mt-3 md:mt-4">
-        <h3 className="text-xs sm:text-sm text-gray-700 line-clamp-1">{name}</h3>
-        <p className="mt-1 text-xs sm:text-sm font-medium text-gray-900">{price}</p>
+      <div className="mt-3 md:mt-4 px-1">
+        <h3 className="text-xs sm:text-sm font-medium text-gray-700 line-clamp-2">{name}</h3>
+        <p className="mt-1 text-xs sm:text-sm font-bold text-gray-900">{price}</p>
+        <div className="text-xs text-gray-500 mb-2 line-clamp-2">
+          Premium quality beauty product for your skincare routine
+        </div>
         <Button 
           className="w-full mt-2 md:mt-3 text-xs sm:text-sm" 
           variant="default" 
