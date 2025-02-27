@@ -1,3 +1,4 @@
+
 import { Search, ShoppingBag, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -13,7 +14,7 @@ export const Header = () => {
           <div className="flex items-center space-x-8">
             <a href="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/c38f3a25-ed73-49f6-a829-3f21eceb529f.png" 
+                src="/lovable-uploads/fdeb6485-6214-4d95-80ec-73cfb8caed3c.png" 
                 alt="Asan Mart Logo" 
                 className="h-12 w-auto"
               />
