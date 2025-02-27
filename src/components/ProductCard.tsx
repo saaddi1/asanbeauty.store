@@ -35,17 +35,17 @@ export const ProductCard = ({ name, price, image }: ProductCardProps) => {
           className="h-full w-full object-cover object-center"
         />
       </div>
-      <div className="mt-4">
-        <h3 className="text-sm text-gray-700">{name}</h3>
-        <p className="mt-1 text-sm font-medium text-gray-900">{price}</p>
+      <div className="mt-3 md:mt-4">
+        <h3 className="text-xs sm:text-sm text-gray-700 line-clamp-1">{name}</h3>
+        <p className="mt-1 text-xs sm:text-sm font-medium text-gray-900">{price}</p>
         <Button 
-          className="w-full mt-3" 
+          className="w-full mt-2 md:mt-3 text-xs sm:text-sm" 
           variant="default" 
           size="sm"
           onClick={handleShopNow}
           disabled={isLoading}
         >
-          <ShoppingCart className="mr-2 h-4 w-4" />
+          <ShoppingCart className="mr-1 md:mr-2 h-3 w-3 md:h-4 md:w-4" />
           {isLoading ? "Adding..." : "Shop Now"}
         </Button>
       </div>
