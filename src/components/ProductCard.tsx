@@ -12,6 +12,7 @@ interface ProductCardProps {
 
 export const ProductCard = ({ name, price, image }: ProductCardProps) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const handleShopNow = () => {
     setIsLoading(true);
@@ -26,14 +27,27 @@ export const ProductCard = ({ name, price, image }: ProductCardProps) => {
     }, 600);
   };
 
+  const handleImageError = () => {
+    setImageError(true);
+    console.error(`Failed to load image: ${image}`);
+  };
+
   return (
     <div className="group cursor-pointer">
       <div className="aspect-square overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-        <img
-          src={image}
-          alt={name}
-          className="h-full w-full object-cover object-center"
-        />
+        {imageError ? (
+          <div className="h-full w-full flex items-center justify-center bg-gray-200">
+            <p className="text-xs text-gray-500 p-2 text-center">{name}</p>
+          </div>
+        ) : (
+          <img
+            src={image}
+            alt={name}
+            className="h-full w-full object-cover object-center"
+            onError={handleImageError}
+            loading="lazy"
+          />
+        )}
       </div>
       <div className="mt-3 md:mt-4">
         <h3 className="text-xs sm:text-sm text-gray-700 line-clamp-1">{name}</h3>
