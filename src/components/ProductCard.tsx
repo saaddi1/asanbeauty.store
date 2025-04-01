@@ -15,16 +15,17 @@ export const ProductCard = ({ name, price, image }: ProductCardProps) => {
   const [imageError, setImageError] = useState(false);
 
   const handleShopNow = () => {
+    // Set loading state
     setIsLoading(true);
     
-    // Simulate adding to cart with a delay
-    setTimeout(() => {
-      setIsLoading(false);
-      toast({
-        title: "Item added to cart",
-        description: `${name} has been added to your shopping cart.`,
-      });
-    }, 600);
+    // Immediately add to cart without delay
+    toast({
+      title: "Item added to cart",
+      description: `${name} has been added to your shopping cart.`,
+    });
+    
+    // Reset loading state immediately
+    setIsLoading(false);
   };
 
   const handleImageError = () => {
@@ -63,7 +64,7 @@ export const ProductCard = ({ name, price, image }: ProductCardProps) => {
           disabled={isLoading}
         >
           <ShoppingCart className="mr-1 md:mr-2 h-3 w-3 md:h-4 md:w-4" />
-          {isLoading ? "Adding..." : "Shop Now"}
+          Shop Now
         </Button>
       </div>
     </div>
