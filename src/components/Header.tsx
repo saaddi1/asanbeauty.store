@@ -1,8 +1,9 @@
 
-import { Search, ShoppingBag, Menu } from "lucide-react";
+import { Search, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { useState } from "react";
+import { ShoppingCartIcon } from "./ShoppingCart";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,9 +37,7 @@ export const Header = () => {
               />
               <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-400" />
             </div>
-            <Button variant="ghost">
-              <ShoppingBag className="h-5 w-5" />
-            </Button>
+            <ShoppingCartIcon />
           </div>
 
           <Button
@@ -58,12 +57,13 @@ export const Header = () => {
               <a href="#" className="text-gray-600 hover:text-[#C1D9BF]">Hair</a>
               <a href="#" className="text-gray-600 hover:text-[#C1D9BF]">Body</a>
             </nav>
-            <div className="mt-4">
+            <div className="mt-4 flex justify-between items-center">
               <Input
                 type="search"
                 placeholder="Search..."
-                className="w-full"
+                className="w-full mr-2"
               />
+              <ShoppingCartIcon />
             </div>
           </div>
         )}

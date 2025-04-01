@@ -8,6 +8,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import UploadProducts from "./pages/UploadProducts";
+import { CartProvider } from "./contexts/CartContext";
+import { ShoppingCart } from "./components/ShoppingCart";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -17,15 +19,18 @@ const App = () => {
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/upload" element={<UploadProducts />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
+          <CartProvider>
+            <Toaster />
+            <Sonner />
+            <ShoppingCart />
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/upload" element={<UploadProducts />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </CartProvider>
         </TooltipProvider>
       </QueryClientProvider>
     </React.StrictMode>

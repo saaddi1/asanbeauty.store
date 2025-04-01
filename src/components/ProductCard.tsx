@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { toast } from "./ui/use-toast";
+import { useCart } from "@/contexts/CartContext";
 
 interface ProductCardProps {
   name: string;
@@ -13,12 +14,16 @@ interface ProductCardProps {
 export const ProductCard = ({ name, price, image }: ProductCardProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [imageError, setImageError] = useState(false);
+  const { addToCart, setIsCartOpen } = useCart();
 
   const handleShopNow = () => {
     // Set loading state
     setIsLoading(true);
     
-    // Immediately add to cart without delay
+    // Add to cart
+    addToCart({ name, price, image });
+    
+    // Show toast notification
     toast({
       title: "Item added to cart",
       description: `${name} has been added to your shopping cart.`,
@@ -26,6 +31,9 @@ export const ProductCard = ({ name, price, image }: ProductCardProps) => {
     
     // Reset loading state immediately
     setIsLoading(false);
+    
+    // Open the cart
+    setIsCartOpen(true);
   };
 
   const handleImageError = () => {
