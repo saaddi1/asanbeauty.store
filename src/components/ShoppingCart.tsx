@@ -3,6 +3,7 @@ import React from 'react';
 import { X, Minus, Plus, ShoppingBag } from 'lucide-react';
 import { useCart, CartItem } from '@/contexts/CartContext';
 import { Button } from './ui/button';
+import { Checkout } from './Checkout';
 
 export const ShoppingCartIcon: React.FC = () => {
   const { totalItems, setIsCartOpen, isCartOpen } = useCart();
@@ -136,12 +137,7 @@ export const ShoppingCart: React.FC = () => {
                   Shipping and taxes calculated at checkout.
                 </p>
                 <div className="mt-6 flex space-x-3">
-                  <Button 
-                    className="w-full py-5" 
-                    onClick={() => alert('Checkout functionality would go here')}
-                  >
-                    Checkout
-                  </Button>
+                  <Checkout onClose={() => setIsCartOpen(false)} />
                   <Button 
                     variant="outline" 
                     className="py-5"
