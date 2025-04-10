@@ -6,6 +6,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useIsMobile } from "@/hooks/use-mobile";
 import {
   Form,
   FormControl,
@@ -17,6 +18,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerFooter,
+} from "@/components/ui/drawer";
 
 // Initialize Stripe (replace with your publishable key)
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
@@ -42,6 +50,7 @@ export const Checkout = ({ onClose }: CheckoutProps) => {
   const { items, clearCart } = useCart();
   const [isProcessing, setIsProcessing] = useState(false);
   const [step, setStep] = useState<"information" | "payment">("information");
+  const isMobile = useIsMobile();
 
   // Initialize form
   const form = useForm<CheckoutFormValues>({
@@ -133,131 +142,152 @@ export const Checkout = ({ onClose }: CheckoutProps) => {
     setStep("information");
   };
 
-  if (step === "information") {
-    return (
-      <div className="mt-6">
-        <h3 className="text-lg font-medium mb-4">Shipping Information</h3>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmitInformation)} className="space-y-4">
-            <FormField
-              control={form.control}
-              name="fullName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Full Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="John Doe" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            
-            <div className="grid grid-cols-2 gap-4">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input type="email" placeholder="your@email.com" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Phone Number</FormLabel>
-                    <FormControl>
-                      <Input placeholder="+1 123 456 7890" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            
-            <FormField
-              control={form.control}
-              name="address"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Street Address</FormLabel>
-                  <FormControl>
-                    <Textarea placeholder="123 Main St, Apt 4B" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            
-            <div className="grid grid-cols-3 gap-4">
-              <FormField
-                control={form.control}
-                name="city"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>City</FormLabel>
-                    <FormControl>
-                      <Input placeholder="New York" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              
-              <FormField
-                control={form.control}
-                name="state"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>State</FormLabel>
-                    <FormControl>
-                      <Input placeholder="NY" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              
-              <FormField
-                control={form.control}
-                name="zipCode"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Zip Code</FormLabel>
-                    <FormControl>
-                      <Input placeholder="10001" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            
-            <Button 
-              type="submit" 
-              className="w-full rounded-md px-4 py-3 text-white transition hover:bg-blue-700"
-            >
-              Continue to Payment
-            </Button>
-          </form>
-        </Form>
-      </div>
-    );
-  }
+  const renderInformationForm = () => (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmitInformation)} className="space-y-4">
+        <FormField
+          control={form.control}
+          name="fullName"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Full Name</FormLabel>
+              <FormControl>
+                <Input placeholder="John Doe" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        
+        <div className={isMobile ? "space-y-4" : "grid grid-cols-2 gap-4"}>
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input 
+                    type="email" 
+                    placeholder="your@email.com" 
+                    {...field}
+                    className="w-full"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Phone Number</FormLabel>
+                <FormControl>
+                  <Input 
+                    placeholder="+1 123 456 7890" 
+                    {...field}
+                    className="w-full"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        
+        <FormField
+          control={form.control}
+          name="address"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Street Address</FormLabel>
+              <FormControl>
+                <Textarea 
+                  placeholder="123 Main St, Apt 4B" 
+                  {...field} 
+                  className="w-full min-h-[80px]"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        
+        <div className={isMobile ? "space-y-4" : "grid grid-cols-3 gap-4"}>
+          <FormField
+            control={form.control}
+            name="city"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>City</FormLabel>
+                <FormControl>
+                  <Input 
+                    placeholder="New York" 
+                    {...field}
+                    className="w-full" 
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="state"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>State</FormLabel>
+                <FormControl>
+                  <Input 
+                    placeholder="NY" 
+                    {...field} 
+                    className="w-full"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="zipCode"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Zip Code</FormLabel>
+                <FormControl>
+                  <Input 
+                    placeholder="10001" 
+                    {...field}
+                    className="w-full" 
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        
+        <Button 
+          type="submit" 
+          className="w-full rounded-md px-4 py-3 mt-4 text-white transition hover:bg-blue-700"
+          size={isMobile ? "lg" : "default"}
+        >
+          Continue to Payment
+        </Button>
+      </form>
+    </Form>
+  );
 
-  return (
-    <div className="mt-6 space-y-4">
+  const renderPaymentStep = () => (
+    <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-medium">Payment</h3>
-        <Button variant="ghost" onClick={handleBack} size="sm">
+        <Button variant="ghost" onClick={handleBack} size={isMobile ? "sm" : "default"}>
           Back to Information
         </Button>
       </div>
@@ -269,6 +299,43 @@ export const Checkout = ({ onClose }: CheckoutProps) => {
       >
         {isProcessing ? "Processing..." : "Proceed to Checkout"}
       </button>
+    </div>
+  );
+
+  if (isMobile) {
+    return (
+      <Drawer open={true} onClose={onClose}>
+        <DrawerContent className="px-4 pb-6 pt-0">
+          <DrawerHeader className="pb-0">
+            <DrawerTitle>
+              {step === "information" ? "Shipping Information" : "Payment"}
+            </DrawerTitle>
+          </DrawerHeader>
+          <div className="px-1 py-4">
+            {step === "information" ? renderInformationForm() : renderPaymentStep()}
+          </div>
+          <DrawerFooter className="pt-2">
+            <Button variant="outline" onClick={onClose}>
+              Cancel
+            </Button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    );
+  }
+
+  if (step === "information") {
+    return (
+      <div className="mt-6">
+        <h3 className="text-lg font-medium mb-4">Shipping Information</h3>
+        {renderInformationForm()}
+      </div>
+    );
+  }
+
+  return (
+    <div className="mt-6 space-y-4">
+      {renderPaymentStep()}
     </div>
   );
 };
