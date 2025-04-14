@@ -20,12 +20,6 @@ export const Header = () => {
                 className="h-12 w-auto"
               />
             </a>
-            <nav className="hidden md:flex space-x-6">
-              <a href="#" className="text-gray-600 hover:text-[#C1D9BF]">Skincare</a>
-              <a href="#" className="text-gray-600 hover:text-[#C1D9BF]">Makeup</a>
-              <a href="#" className="text-gray-600 hover:text-[#C1D9BF]">Hair</a>
-              <a href="#" className="text-gray-600 hover:text-[#C1D9BF]">Body</a>
-            </nav>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -51,12 +45,6 @@ export const Header = () => {
 
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
-            <nav className="flex flex-col space-y-4">
-              <a href="#" className="text-gray-600 hover:text-[#C1D9BF]">Skincare</a>
-              <a href="#" className="text-gray-600 hover:text-[#C1D9BF]">Makeup</a>
-              <a href="#" className="text-gray-600 hover:text-[#C1D9BF]">Hair</a>
-              <a href="#" className="text-gray-600 hover:text-[#C1D9BF]">Body</a>
-            </nav>
             <div className="mt-4 flex justify-between items-center">
               <Input
                 type="search"
