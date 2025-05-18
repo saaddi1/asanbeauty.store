@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import UploadProducts from "./pages/UploadProducts";
 import { CartProvider } from "./contexts/CartContext";
 import { ShoppingCart } from "./components/ShoppingCart";
+import { ChatBot } from "./components/ChatBot";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => {
             <Toaster />
             <Sonner />
             <ShoppingCart />
+            <ChatBot />
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Index />} />
