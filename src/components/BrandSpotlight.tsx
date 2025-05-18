@@ -1,19 +1,39 @@
+
 import { Card, CardContent } from "./ui/card";
+
+// Import the product images from the same source as TrendingProducts
+const trendingProducts = [
+  {
+    name: "Natural Clay Mask - Deep Cleansing Formula",
+    price: "1150 PKR",
+    image: "/lovable-uploads/89b0b21b-ea89-4311-88a0-91a84777cbbb.png",
+  },
+  {
+    name: "Skin Whitening Serum - Advanced Brightening",
+    price: "1100 PKR",
+    image: "/lovable-uploads/a2b15f17-646e-4bfc-b124-35e00a6c7857.png",
+  },
+  {
+    name: "Beauty Cream - 24-Hour Hydration Formula",
+    price: "990 PKR",
+    image: "/lovable-uploads/922ba74d-5810-4e1d-b461-2f8fa31802b3.png",
+  },
+];
 
 const brands = [
   {
     name: "Natural Glow",
-    logo: "https://source.unsplash.com/photo-1582562124811-c09040d0a901",
+    logo: trendingProducts[0].image, // Using product image from trending products
     description: "Organic skincare essentials",
   },
   {
     name: "Pure Beauty",
-    logo: "https://source.unsplash.com/photo-1721322800607-8c38375eef04",
+    logo: trendingProducts[1].image, // Using product image from trending products
     description: "Luxury cosmetics",
   },
   {
     name: "Eco Care",
-    logo: "https://source.unsplash.com/photo-1535268647677-300dbf3d78d1",
+    logo: trendingProducts[2].image, // Using product image from trending products
     description: "Sustainable beauty products",
   },
 ];
