@@ -12,7 +12,7 @@ export const Header = () => {
     <header className="border-b">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-4">
             <a href="/" className="flex items-center">
               <img 
                 src="/lovable-uploads/fdeb6485-6214-4d95-80ec-73cfb8caed3c.png" 
@@ -20,6 +20,9 @@ export const Header = () => {
                 className="h-12 w-auto"
               />
             </a>
+            <h1 className="text-2xl font-dancing-script font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500 hidden sm:block">
+              Asan Mart
+            </h1>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -45,7 +48,10 @@ export const Header = () => {
 
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
-            <div className="mt-4 flex justify-between items-center">
+            <h1 className="text-xl font-dancing-script font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500 mb-3 text-center">
+              Asan Mart
+            </h1>
+            <div className="mt-2 flex justify-between items-center">
               <Input
                 type="search"
                 placeholder="Search..."

@@ -12,6 +12,9 @@ import { CartProvider } from "./contexts/CartContext";
 import { ShoppingCart } from "./components/ShoppingCart";
 import { ChatBot } from "./components/ChatBot";
 
+// Add Google Font for Dancing Script
+import { Helmet } from "react-helmet";
+
 // Create a client
 const queryClient = new QueryClient();
 
@@ -21,6 +24,9 @@ const App = () => {
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <CartProvider>
+            <Helmet>
+              <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
+            </Helmet>
             <Toaster />
             <Sonner />
             <ShoppingCart />
