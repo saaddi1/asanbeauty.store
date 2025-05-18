@@ -1,5 +1,6 @@
 
 import { ProductCard } from "./ProductCard";
+import { useRecommendations } from "../services/RecommendationService";
 
 const trendingProducts = [
   {
@@ -25,15 +26,26 @@ const trendingProducts = [
 ];
 
 export const TrendingProducts = () => {
+  // Use our recommendation service
+  const { recommendations, trackProductView } = useRecommendations(trendingProducts);
+
+  // Get either recommendations or trending products if no recommendations
+  const productsToShow = recommendations.length > 0 ? recommendations : trendingProducts;
+  
+  const handleProductClick = (productName: string) => {
+    trackProductView(productName);
+  };
+
   return (
     <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-6">
-      {trendingProducts.map((product) => (
-        <ProductCard
-          key={product.name}
-          name={product.name}
-          price={product.price}
-          image={product.image}
-        />
+      {productsToShow.map((product) => (
+        <div key={product.name} onClick={() => handleProductClick(product.name)}>
+          <ProductCard
+            name={product.name}
+            price={product.price}
+            image={product.image}
+          />
+        </div>
       ))}
     </div>
   );

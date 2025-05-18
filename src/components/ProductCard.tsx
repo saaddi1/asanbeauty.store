@@ -1,7 +1,6 @@
-
 import { Button } from "./ui/button";
 import { ShoppingCart } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "./ui/use-toast";
 import { useCart } from "@/contexts/CartContext";
 
@@ -15,6 +14,26 @@ export const ProductCard = ({ name, price, image }: ProductCardProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [imageError, setImageError] = useState(false);
   const { addToCart, setIsCartOpen } = useCart();
+  
+  // Track view in localStorage when product is rendered
+  useEffect(() => {
+    try {
+      const viewHistory = JSON.parse(localStorage.getItem('view_history') || '[]');
+      // Check if this product was recently viewed (last 5 minutes)
+      const recentlyViewed = viewHistory.some((item: any) => 
+        item.productName === name && 
+        Date.now() - item.timestamp < 5 * 60 * 1000
+      );
+      
+      // If not recently viewed, track it
+      if (!recentlyViewed) {
+        // We'll let the parent component handle tracking
+        // This is just to ensure we're not tracking on every re-render
+      }
+    } catch (error) {
+      console.error('Error tracking product view:', error);
+    }
+  }, [name]);
 
   const handleShopNow = () => {
     // Set loading state

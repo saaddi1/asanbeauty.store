@@ -6,6 +6,30 @@ import { RotatingHeader } from "@/components/RotatingHeader";
 import { ProductCategories } from "@/components/ProductCategories";
 import { TrendingProducts } from "@/components/TrendingProducts";
 import { BrandSpotlight } from "@/components/BrandSpotlight";
+import { ProductRecommendations } from "@/components/ProductRecommendations";
+
+const trendingProducts = [
+  {
+    name: "Natural Clay Mask - Deep Cleansing Formula",
+    price: "1150 PKR",
+    image: "/lovable-uploads/89b0b21b-ea89-4311-88a0-91a84777cbbb.png",
+  },
+  {
+    name: "Skin Whitening Serum - Advanced Brightening",
+    price: "1100 PKR",
+    image: "/lovable-uploads/a2b15f17-646e-4bfc-b124-35e00a6c7857.png",
+  },
+  {
+    name: "Beauty Cream - 24-Hour Hydration Formula",
+    price: "990 PKR",
+    image: "/lovable-uploads/922ba74d-5810-4e1d-b461-2f8fa31802b3.png",
+  },
+  {
+    name: "Hydra Glow Face Wash - Gentle Daily Cleanser",
+    price: "900 PKR",
+    image: "/lovable-uploads/db0060eb-9d70-42b0-8168-6a18bcd6e847.png",
+  },
+];
 
 const Index = () => {
   return (
@@ -22,6 +46,16 @@ const Index = () => {
               Shop by Category
             </h2>
             <ProductCategories />
+          </div>
+        </section>
+
+        {/* Personalized Recommendations Section */}
+        <section className="py-8 md:py-16 bg-white">
+          <div className="container mx-auto px-3 md:px-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-[#C1D9BF] to-[#F2FCE2]">
+              Just For You
+            </h2>
+            <ProductRecommendations products={trendingProducts} />
           </div>
         </section>
 
